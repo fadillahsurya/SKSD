@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `laravelsitemdesa`
+-- Database: `laravelsistemdesa`
 --
 
 -- --------------------------------------------------------
@@ -250,7 +250,7 @@ CREATE TABLE `dusun` (
 
 INSERT INTO `dusun` (`id`, `nama`, `created_at`, `updated_at`) VALUES
 (1, 'tampomea', NULL, NULL),
-(2, 'orobatu', NULL, NULL),
+(2, 'Orobatu', NULL, NULL),
 (3, 'tamppouhai', NULL, NULL),
 (4, 'bolomalala', NULL, NULL),
 (5, 'bone-bone', NULL, NULL);

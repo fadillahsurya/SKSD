@@ -56,7 +56,7 @@ $desa = App\Desa::find(1);
         <nav class="navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark">
             <div class="container px-4">
                 <a class="navbar-brand" href="{{ url('') }}">
-                    <h2 class="h1 text-white"><b>PELAYANAN SKSD</b></h2>
+                    <h2 class="h1 text-white"><b>Pelayanan SKSD</b></h2>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-main"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -105,12 +105,15 @@ $desa = App\Desa::find(1);
                                     <i class="fas fa-fw fa-atlas text-success"></i>
                                     <span class="nav-link-inner--text">Pemerintahan Desa</span>
                                 </a>
-                                <a class="dropdown-item @if (Request::segment(1) == 'berita') active @endif"
-                                    href="{{ route('masuk') }}">
-                                    <i class="fas fa-user"></i>
-                                    <span class="nav-link-inner--text">Login</span>
-                                </a>
-
+                                @guest
+                                <li class="nav-item">
+                                    <a class="nav-link nav-link-icon" href="{{ route('masuk') }}">
+                                        <i class="fas fa-sign-in-alt"></i>
+                                        <span class="nav-link-inner--text">Masuk</span>
+                                    </a>
+                                </li>
+                                @endguest
+                            </ul>
                                 {{-- <a class="dropdown-item @if (Request::segment(1) == 'berita') active @endif"
                                     href="{{ route('berita') }}">
                                     <i class="fas fa-fw fa-newspaper text-cyan"></i>
@@ -121,11 +124,12 @@ $desa = App\Desa::find(1);
                                     <i class="fas fa-fw fa-images text-orange"></i>
                                     <span class="nav-link-inner--text">Gallery</span>
                                 </a> --}}
+                                
                                 {{-- <a class="dropdown-item @if (Request::segment(1) == 'statistik-penduduk') active @endif"
                                     href="{{ route('statistik-penduduk') }}">
                                     <i class="fas fa-fw fa-chart-pie text-info"></i>
-                                    <span class="nav-link-inner--text">Statistik Penduduk</span> --}}
-                                </a>
+                                    <span class="nav-link-inner--text">Statistik Penduduk</span>
+                                </a> --}}
                                 {{-- <a
                                     class="dropdown-item @if (Request::segment(1) == 'laporan-apbdes') active @endif"
                                     href="{{ route('laporan-apbdes') }}">
@@ -143,11 +147,11 @@ $desa = App\Desa::find(1);
                             <div class="dropdown-menu dropdown-menu-right py-0 overflow-hidden">
                                 <a class="dropdown-item" href="{{ route('dashboard') }}">
                                     <i class="fas fa-fw fa-tachometer-alt text-blue"></i> Dashboard
-                                {{-- </a>
-                                <a class="dropdown-item" href="{{ route('penduduk.index') }}">
-                                    <i class="fas fa-fw fa-users text-info"></i> Kelola Penduduk
                                 </a>
-                                <a class="dropdown-item" href="{{ route('dusun.index') }}">
+                                {{-- <a class="dropdown-item" href="{{ route('penduduk.index') }}">
+                                    <i class="fas fa-fw fa-users text-info"></i> Kelola Penduduk
+                                </a> --}}
+                                {{-- <a class="dropdown-item" href="{{ route('dusun.index') }}">
                                     <i class="fas fa-fw fa-map-marker-alt text-yellow"></i> Kelola Dusun
                                 </a> --}}
                                 <a class="dropdown-item"
@@ -156,11 +160,11 @@ $desa = App\Desa::find(1);
                                 </a>
                                 <a class="dropdown-item" href="{{ route('surat.index') }}">
                                     <i class="fas fa-fw fa-file-alt text-primary"></i> Kelola Surat
-                                {{-- </a>
-                                <a href="{{ route('pemerintahan-desa.index') }}" class="dropdown-item">
+                                </a>
+                                {{-- <a href="{{ route('pemerintahan-desa.index') }}" class="dropdown-item">
                                     <i class="fas fa-fw fa-atlas text-success"></i> Kelola Informasi Pemerintahan Desa
                                 </a> --}}
-                                {{-- <a href="{{ route('berita.index') }}" class="dropdown-item">
+                                {{-- <a href="{{ route('hak-akses.index') }}" class="dropdown-item">
                                     <i class="fas fa-fw fa-newspaper text-cyan"></i> Kelola Berita
                                 </a> --}}
                                 {{-- <a class="dropdown-item" href="{{ route('gallery.index') }}">
@@ -192,7 +196,7 @@ $desa = App\Desa::find(1);
             </div>
         </nav>
         <!-- Header -->
-        <div class="header py-7 py-lg-8" style="background: linear-gradient(87deg, #b13d3d 0, #4b0000 100%);">
+        <div class="header bg-gradient-success py-7 py-lg-8">
             <div class="container">
                 <div class="header-body text-center mb-7">
                     <div class="row justify-content-center">
@@ -202,15 +206,11 @@ $desa = App\Desa::find(1);
                     </div>
                 </div>
             </div>
-        </div>
-        
             <div class="separator separator-bottom separator-skew zindex-100">
-                <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <polygon class="fill-default" points="2560 0 2560 100 0 100" style="fill: rgb(54, 54, 54);"></polygon>
+                <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                   <polygon style="fill:#89a50c" points="2560 0 2560 100 0 100"></polygon>
                 </svg>
             </div>
-            
         </div>
         <!-- Page content -->
         <div class="container mt--8 pb-5">
@@ -222,7 +222,7 @@ $desa = App\Desa::find(1);
                     <div class="col-xl-6">
                         <div class="copyright text-center text-xl-left text-muted">
                             © {{ date('Y') }} <a href="{{ url('') }}" class="font-weight-bold ml-1" target="_blank">Desa
-                                </a>
+                                {{ $desa->nama_desa }}</a>
                         </div>
                     </div>
                     <div class="col-xl-6">

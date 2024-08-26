@@ -128,52 +128,52 @@ $(document).ready(function (){
             ]
         };
 
-        let chart_agama = Highcharts.chart('chart-agama', pie);
-        chart_agama.title.textSetter("Grafik Agama");
-        chart_agama.series[0].setData(response.agama);
+        // let chart_agama = Highcharts.chart('chart-agama', pie);
+        // chart_agama.title.textSetter("Grafik Agama");
+        // chart_agama.series[0].setData(response.agama);
 
-        let chart_agama_bar = Highcharts.chart('chart-agama-bar', column);
-        chart_agama_bar.title.textSetter("Grafik Agama");
-        chart_agama_bar.series[0].setData(response.agama);
+        // let chart_agama_bar = Highcharts.chart('chart-agama-bar', column);
+        // chart_agama_bar.title.textSetter("Grafik Agama");
+        // chart_agama_bar.series[0].setData(response.agama);
 
-        let chart_darah = Highcharts.chart('chart-darah', pie);
-        chart_darah.title.textSetter("Grafik Golongan Darah");
-        chart_darah.series[0].setData(response.darah);
+        // let chart_darah = Highcharts.chart('chart-darah', pie);
+        // chart_darah.title.textSetter("Grafik Golongan Darah");
+        // chart_darah.series[0].setData(response.darah);
 
-        let chart_darah_bar = Highcharts.chart('chart-darah-bar', column);
-        chart_darah_bar.title.textSetter("Grafik Golongan Darah");
-        chart_darah_bar.series[0].setData(response.darah);
+        // let chart_darah_bar = Highcharts.chart('chart-darah-bar', column);
+        // chart_darah_bar.title.textSetter("Grafik Golongan Darah");
+        // chart_darah_bar.series[0].setData(response.darah);
 
-        let chart_pendidikan = Highcharts.chart('chart-pendidikan', pie);
-        chart_pendidikan.title.textSetter("Grafik Pendidikan");
-        chart_pendidikan.series[0].setData(response.pendidikan);
+        // let chart_pendidikan = Highcharts.chart('chart-pendidikan', pie);
+        // chart_pendidikan.title.textSetter("Grafik Pendidikan");
+        // chart_pendidikan.series[0].setData(response.pendidikan);
 
-        let chart_pendidikan_bar = Highcharts.chart('chart-pendidikan-bar', column);
-        chart_pendidikan_bar.title.textSetter("Grafik Pendidikan");
-        chart_pendidikan_bar.series[0].setData(response.pendidikan);
+        // let chart_pendidikan_bar = Highcharts.chart('chart-pendidikan-bar', column);
+        // chart_pendidikan_bar.title.textSetter("Grafik Pendidikan");
+        // chart_pendidikan_bar.series[0].setData(response.pendidikan);
 
-        let chart_perkawinan = Highcharts.chart('chart-perkawinan', pie);
-        chart_perkawinan.title.textSetter("Grafik Perkawinan");
-        chart_perkawinan.series[0].setData(response.perkawinan);
+        // let chart_perkawinan = Highcharts.chart('chart-perkawinan', pie);
+        // chart_perkawinan.title.textSetter("Grafik Perkawinan");
+        // chart_perkawinan.series[0].setData(response.perkawinan);
 
-        let chart_perkawinan_bar = Highcharts.chart('chart-perkawinan-bar', column);
-        chart_perkawinan_bar.title.textSetter("Grafik Perkawinan");
-        chart_perkawinan_bar.series[0].setData(response.perkawinan);
+        // let chart_perkawinan_bar = Highcharts.chart('chart-perkawinan-bar', column);
+        // chart_perkawinan_bar.title.textSetter("Grafik Perkawinan");
+        // chart_perkawinan_bar.series[0].setData(response.perkawinan);
 
-        column.legend = {enabled: true};
-        column.xAxis = {categories: [1,2,3],crosshair: true};
-        column.series = [{name: "", data:[]},{name: "", data:[]}];
-        let chart_usia = Highcharts.chart('chart-usia', column);
-        chart_usia.title.textSetter("Grafik Usia");
-        chart_usia.xAxis[0].setCategories(response.usia['kategori']);
-        chart_usia.series[0].setName('Laki - laki');
-        chart_usia.series[0].setData(response.usia['laki']);
-        chart_usia.series[1].setName('Perempuan');
-        chart_usia.series[1].setData(response.usia['perempuan']);
+        // column.legend = {enabled: true};
+        // column.xAxis = {categories: [1,2,3],crosshair: true};
+        // column.series = [{name: "", data:[]},{name: "", data:[]}];
+        // let chart_usia = Highcharts.chart('chart-usia', column);
+        // chart_usia.title.textSetter("Grafik Usia");
+        // chart_usia.xAxis[0].setCategories(response.usia['kategori']);
+        // chart_usia.series[0].setName('Laki - laki');
+        // chart_usia.series[0].setData(response.usia['laki']);
+        // chart_usia.series[1].setName('Perempuan');
+        // chart_usia.series[1].setData(response.usia['perempuan']);
 
-        let chart_pekerjaan = Highcharts.chart('chart-pekerjaan', bar);
-        chart_pekerjaan.title.textSetter("Grafik Pekerjaan");
-        chart_pekerjaan.series[0].setData(response.pekerjaan);
-        chart_pekerjaan.series[0].setName('Jumlah Penduduk');
+        // let chart_pekerjaan = Highcharts.chart('chart-pekerjaan', bar);
+        // chart_pekerjaan.title.textSetter("Grafik Pekerjaan");
+        // chart_pekerjaan.series[0].setData(response.pekerjaan);
+        // chart_pekerjaan.series[0].setName('Jumlah Penduduk');
     });
 });

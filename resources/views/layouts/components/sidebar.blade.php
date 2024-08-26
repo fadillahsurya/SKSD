@@ -112,13 +112,14 @@
                     <span class="nav-link-inner--text">Kelola Informasi Pemerintahan Desa</span>
                 </a>
             </li> --}}
-            {{-- <li class="nav-item">
-                <a class="nav-link @if (Request::segment(1) == 'kelola-berita' || Request::segment(1) == 'tambah-berita' || Request::segment(1) == 'berita') active @endif"
-                    href="{{ route('berita.index') }}">
-                    <i class="fas fa-newspaper text-cyan"></i>
-                    <span class="nav-link-inner--text">Kelola Berita</span>
+            <li class="nav-item">
+                <a class="nav-link @if (Request::segment(1) == 'kelola-hak-akses' || Request::segment(1) == 'tambah-hak-akses' || Request::segment(1) == 'hak-akses') active @endif"
+                    href="{{ route('hak-akses.index') }}">
+                    <i class="fas fa-user-shield text-cyan"></i>
+                    <span class="nav-link-inner--text">Kelola Hak Akses</span>
                 </a>
-            </li> --}}
+            </li>
+            
             {{-- <li class="nav-item">
                 <a class="nav-link @if (Request::segment(1) == 'gallery') active @endif"
                     href="{{ route('gallery.index') }}">

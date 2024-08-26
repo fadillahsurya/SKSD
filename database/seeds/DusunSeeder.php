@@ -14,7 +14,7 @@ class DusunSeeder extends Seeder
     {
         DB::table('dusun')->insert([
             ['nama' => 'tampomea'],
-            ['nama' => 'orobatu'],
+            ['nama' => 'Orobatu'],
             ['nama' => 'tamppouhai'],
             ['nama' => 'bolomalala'],
             ['nama' => 'bone-bone'],

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HakAksesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::group(['middleware' => ['web', 'auth']], function () {
+    // Rute untuk kelola hak akses
+    Route::get('/kelola-hak-akses', [HakAksesController::class, 'index'])->name('hak-akses.index');
+    Route::get('/tambah-hak-akses', [HakAksesController::class, 'create'])->name('hak-akses.create');
+    Route::get('/edit-hak-akses/{id}', [HakAksesController::class, 'edit'])->name('hak-akses.edit');
+    Route::post('/hak-akses', [HakAksesController::class, 'store'])->name('hak-akses.store');
+    Route::patch('/hak-akses/{id}', [HakAksesController::class, 'update'])->name('.update');
+    Route::delete('/hak-akses/{id}', [HakAksesController::class, 'destroy'])->name('hak-akses.destroy');
+    
+    // Resource route jika Anda ingin mengelola CRUD secara otomatis
+    Route::resource('hak-akses', HakAksesController::class)->except('create', 'show', 'index', 'edit');
+});
+
+
 Route::get('/', 'HomeController@index')->name('home.index');
 
 Route::get('/laporan-apbdes', 'AnggaranRealisasiController@laporan_apbdes')->name('laporan-apbdes');
@@ -21,12 +35,7 @@ Route::get('/pemerintahan-desa', 'PemerintahanDesaController@pemerintahan_desa')
 Route::get('/pemerintahan-desa/{pemerintahan_desa}', function () {
     return abort(404);
 });
-Route::get('/pemerintahan-desa/{pemerintahan_desa}/{slug}', 'PemerintahanDesaController@show')->name('pemerintahan-desa.show');
-Route::get('/berita', 'BeritaController@berita')->name('berita');
-Route::get('/berita/{berita}/{slug}', 'BeritaController@show')->name('berita.show');
-Route::get('/berita/{berita}', function () {
-    return abort(404);
-});
+
 Route::get('/gallery', 'GalleryController@gallery')->name('gallery');
 Route::get('/buat-surat/{id}/{slug}', 'CetakSuratController@create')->name('buat-surat');
 // Route::get('/panduan', 'HomeController@panduan')->name('panduan');
@@ -60,10 +69,7 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::get('/edit-pemerintahan-desa/{pemerintahan_desa}', 'PemerintahanDesaController@edit')->name('pemerintahan-desa.edit');
     Route::resource('/pemerintahan-desa', 'PemerintahanDesaController')->except('create', 'show', 'index', 'edit');
 
-    Route::get('/kelola-berita', 'BeritaController@index')->name('berita.index');
-    Route::get('/tambah-berita', 'BeritaController@create')->name('berita.create');
-    Route::get('/edit-berita/{berita}', 'BeritaController@edit')->name('berita.edit');
-    Route::resource('/berita', 'BeritaController')->except('create', 'show', 'index', 'edit');
+
 
     Route::resource('/isiSurat', 'IsiSuratController')->except('index', 'create', 'edit', 'show');
 

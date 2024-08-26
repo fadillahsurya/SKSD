@@ -83,7 +83,6 @@
                             <td>Rp. {{ substr(number_format($item->nilai_realisasi, 2, ',', '.'),0,-3) }}</td>
                             <td>{{ date('d/m/Y H:i:s', strtotime($item->created_at)) }}</td>
                             <td>{{ date('d/m/Y H:i:s', strtotime($item->updated_at)) }}</td>
-                            <td>Rp. {{ substr(number_format($item->jenis_anggaran, 2, ',', '.'),0,-3) }}</td>
                         </tr>
                     @empty
                         <tr>
@@ -93,7 +92,6 @@
                 </tbody>
             </table>
         </div>
-        
         {{ $anggaran_realisasi->links() }}
     </div>
 </div>
