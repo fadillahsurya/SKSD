@@ -62,15 +62,16 @@
         </div>
         <div class="table-responsive">
             <table class="table table-hover table-striped table-bordered">
-                <thead>
+                <thead class="text-center">
                     <th width="100px">#</th>
                     <th>Rincian</th>
                     <th>Anggaran</th>
                     <th>Realisasi</th>
                     <th>Ditambahkan pada</th>
                     <th>Diperbarui pada</th>
+                    <th>Detail Jenis Anggaran</th>
                 </thead>
-                <tbody>
+                <tbody class="text-center">
                     @forelse ($anggaran_realisasi as $item)
                         <tr>
                             <td>
@@ -85,7 +86,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="6" align="center">Data tidak tersedia</td>
+                            <td colspan="7" align="center">Data tidak tersedia</td>
                         </tr>
                     @endforelse
                 </tbody>

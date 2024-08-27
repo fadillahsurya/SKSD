@@ -51,12 +51,6 @@ Profil Pengguna
                     <div class="h5 font-weight-300">
                         {{ auth()->user()->email }}
                     </div>
-                    <h2>Roles:</h2>
-                    <ul>
-                        @foreach ($roles as $role)
-                    <li>{{ $role->name }}</li>
-                    @endforeach
-                    </ul>
                 </div>
             </div>
         </div>

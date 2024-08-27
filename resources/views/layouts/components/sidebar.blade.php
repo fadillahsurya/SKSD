@@ -77,7 +77,7 @@
         </ul>
         <hr class="my-3">
         <ul class="navbar-nav">
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link @if (Request::segment(1) == 'penduduk' || Request::segment(1) == 'tambah-penduduk') active @endif"
                     href="{{ route('penduduk.index') }}">
                     <i class="fas fa-users text-info"></i>
@@ -85,12 +85,14 @@
                 </a>
             </li>
             <li class="nav-item">
+            </li> --}}
+            {{-- <li class="nav-item">
                 <a class="nav-link @if (Request::segment(1) == 'dusun' || Request::segment(1) == 'tambah-dusun') active @endif"
                     href="{{ route('dusun.index') }}">
                     <i class="fas fa-map-marker-alt text-yellow"></i>
                     <span class="nav-link-inner--text">Kelola Dusun</span>
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
                 <a class="nav-link @if (Request::segment(1) == 'anggaran-realisasi' || Request::segment(1) == 'tambah-anggaran-realisasi') active @endif"
                     href="{{ url('anggaran-realisasi?jenis=pendapatan&tahun='.date('Y')) }}">
@@ -104,21 +106,22 @@
                     <i class="ni ni-single-copy-04 text-primary"></i>
                     <span class="nav-link-inner--text">Kelola Surat</span>
                 </a>
-            </li>
+            {{-- </li>
             <li class="nav-item">
                 <a class="nav-link @if (Request::segment(1) == 'kelola-pemerintahan-desa' || Request::segment(1) == 'tambah-pemerintahan-desa' || Request::segment(1) == 'pemerintahan-desa') active @endif"
                     href="{{ route('pemerintahan-desa.index') }}">
                     <i class="fas fa-atlas text-success"></i>
                     <span class="nav-link-inner--text">Kelola Informasi Pemerintahan Desa</span>
                 </a>
-            </li>
-            {{-- <li class="nav-item">
-                <a class="nav-link @if (Request::segment(1) == 'kelola-berita' || Request::segment(1) == 'tambah-berita' || Request::segment(1) == 'berita') active @endif"
-                    href="{{ route('berita.index') }}">
-                    <i class="fas fa-newspaper text-cyan"></i>
-                    <span class="nav-link-inner--text">Kelola Berita</span>
-                </a>
             </li> --}}
+            <li class="nav-item">
+                <a class="nav-link @if (Request::segment(1) == 'kelola-hak-akses' || Request::segment(1) == 'tambah-hak-akses' || Request::segment(1) == 'hak-akses') active @endif"
+                    href="{{ route('hak-akses.index') }}">
+                    <i class="fas fa-user-shield text-cyan"></i>
+                    <span class="nav-link-inner--text">Kelola Hak Akses</span>
+                </a>
+            </li>
+            
             {{-- <li class="nav-item">
                 <a class="nav-link @if (Request::segment(1) == 'gallery') active @endif"
                     href="{{ route('gallery.index') }}">
